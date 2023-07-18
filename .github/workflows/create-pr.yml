@@ -23,14 +23,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - run: pnpm install --no-frozen-lockfile
+      - run: TIME=$(date "+%Y.%m.%d-%H.%M.%S"); echo '$TIME' > test.md
       # This should be replaced by the tests we execute
       - run: echo 'creating pull request'
-      - name: create commit
-        run: |
-          git config user.name 'Jeff Wainwright'
-          git config user.email 'yowainwright@gmail.com'
-          git commit -am 'chore: create pull request' --allow-empty
-      # This is the generated pull request info
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
