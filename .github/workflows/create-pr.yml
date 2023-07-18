@@ -21,11 +21,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
+      - run: pnpm install --no-frozen-lockfile
+      # This should be replaced by the tests we execute
+      - run: echo 'creating pull request'
       - name: Create Commit
         uses: actions/checkout@v3
-        - run: pnpm install --no-frozen-lockfile
-        # This should be replaced by the tests we execute
-        - run: echo 'creating pull request'
         - run: |
             git config user.name 'Jeff Wainwright'
             git config user.email 'yowainwright@gmail.com'
