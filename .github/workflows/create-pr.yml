@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-      - uses: actions/checkout@v3
-      - name: create commit
+      - name: Create Commit
+        uses: actions/checkout@v3
         - run: pnpm install --no-frozen-lockfile
         # This should be replaced by the tests we execute
         - run: echo 'creating pull request'
