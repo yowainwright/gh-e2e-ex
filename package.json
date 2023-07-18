@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "Jeff Wainwright (yowainwright@gmail.com) <https://jeffry.in>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "prettier": "^3.0.0"
+  }
 }
