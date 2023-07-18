@@ -1,2 +1,3 @@
-# gh-e2e-ex
-An example repository for testing github pull requests
+# Github E2E Example
+
+An example repository for testing github pull requests.
