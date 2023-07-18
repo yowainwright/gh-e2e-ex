@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - run: pnpm install --no-frozen-lockfile
-      - run: TIME=$(date "+%Y.%m.%d-%H.%M.%S\n"); echo $TIME > test.md
+      - run: TIME=$(date "+%Y.%m.%d-%H.%M.%S"); echo 'New pull request created:' + $TIME >> test.md
       # This should be replaced by the tests we execute
       - run: echo 'creating pull request'
       - name: Create Pull Request
