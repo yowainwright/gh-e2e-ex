@@ -1,0 +1,9 @@
+version = 0.1
+
+[[task]]
+name = 'lint'
+run = 'eslint . --fix'
+
+[[task]]
+name = 'format'
+run = 'prettier --write'

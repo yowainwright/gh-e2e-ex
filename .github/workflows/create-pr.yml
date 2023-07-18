@@ -25,7 +25,12 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
       # This should be replaced by the tests we execute
       - run: echo 'creating pull request'
-      # This is the generated pull request infor
+      - name: create commit
+        run: |
+          git config user.name 'yowainwright'
+          git config user.email 'yowainwright@gmail.com'
+          git commit -am 'chore: create pull request' --allow-empty
+      # This is the generated pull request info
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
