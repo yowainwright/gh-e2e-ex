@@ -1,12 +1,11 @@
 {
   "name": "gh-e2e-ex",
   "version": "1.0.0",
-  "description": "",
+  "description": "A repository to test running integration on Github pull requests",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "Jeff Wainwright (yowainwright@gmail.com) <https://jeffry.in>",
   "license": "MIT",
   "devDependencies": {

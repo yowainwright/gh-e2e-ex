@@ -24,9 +24,21 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --no-frozen-lockfile
       - run: TIME=$(date "+%Y.%m.%d-%H.%M.%S"); echo 'New pull request created:' + $TIME >> test.md
-      # This should be replaced by the tests we execute
       - run: echo 'creating pull request'
       - run: echo ${{ github.event.client_payload.sha }}
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Run Integration Tests
+        run: npx playwright test
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      # Create Pull Request
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
