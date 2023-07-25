@@ -57,6 +57,6 @@ jobs:
           labels: created-pull-request
 
       - name: Get the Pull request number
-        run: echo "PR_NUMBER=${{ steps.create-pull-request.outputs.pull-request-number }}" >> $GITHUB_ENV
+        run: echo "PR_NUMBER=$(echo ${{ steps.create-pull-request.outputs.pull-request-number }})" >> $GITHUB_ENV
       - name: Test Env Vars
-        run: echo $PR_NUMBER
+        run: echo "$PR_NUMBER
