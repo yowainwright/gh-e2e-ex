@@ -12,7 +12,6 @@ test('basic PR test', async ({ page }) => {
   const url = pullRequest ?
     `https://github.com/yowainwright/gh-e2e-ex/pull/${pullRequest}` :
     'https://github.com/yowainwright/gh-e2e-ex/pulls'
-  console.log('basic PR test', { pullRequest, url });
   await page.goto(url);
   await expect(page).toHaveURL(url);
 })
