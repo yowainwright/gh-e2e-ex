@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const pullRequest = process.env.PR_NUMBER || undefined
+const pullRequest = process.env.PULL_REQUEST_NUMBER || undefined
 
 test('basic repository test', async ({ page }) => {
   await page.goto('https://github.com/yowainwright/gh-e2e-ex/');

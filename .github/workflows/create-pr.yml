@@ -51,4 +51,4 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
       - name: Run Playwright tests
-        run: PR_NUMBER=$(echo ${{ steps.create-pull-request.outputs.pull-request-number }}) pnpm exec playwright test && echo $PR_NUMBER
+        run: pnpm exec playwright test && echo $PULL_REQUEST_NUMBER
