@@ -14,4 +14,6 @@ test('basic PR test', async ({ page }) => {
     'https://github.com/yowainwright/gh-e2e-ex/pulls'
   await page.goto(url);
   await expect(page).toHaveURL(url);
+  const firstHeader = page.getByText('Created Pull Request Example');
+  await expect(firstHeader).toBeDefined();
 })
